@@ -23,7 +23,7 @@ import urllib.request
 
 OAUTH_TOKEN_URL = "https://oauth2.googleapis.com/token"
 API_HOST = "https://googleads.googleapis.com"
-DEFAULT_API_VERSION = "v21"
+DEFAULT_API_VERSION = "v25"
 
 ENV_VARS_OBRIGATORIAS = [
     "GOOGLE_ADS_DEVELOPER_TOKEN",

@@ -8,9 +8,10 @@
 
 | Item | Valor | Racional |
 |---|---|---|
-| Nome | `[NNN-SEARCH]-<TEMA>` | nomenclatura do master |
+| Nome | `[NNN-SEARCH]-<TEMA>` | taxonomia do master |
 | Rede | Pesquisa Google (sem parceiros, sem Display) | |
 | Localização / idioma | Brasil / pt | |
+| Sufixo do URL final (UTM) | `utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_content={adgroupid}&utm_term={keyword}` | leitura fora do ecossistema Google; não afeta gclid |
 | Estratégia de lance | Maximizar conversões <ou tCPA/tROAS> | <dado> |
 | Orçamento diário | R$ <valor> | CPC médio × cliques estimados do cluster: <conta> |
 
@@ -32,26 +33,10 @@ URL final: <url> · Caminhos: `/<path1>` (NN) `/<path2>` (NN)
 
 <!-- repetir por ad group -->
 
-## Sitelinks (4+ · título ≤25 · descrições ≤35)
+## Extensões (ativos)
 
-| Título | NN | Desc 1 | NN | Desc 2 | NN | URL |
-|---|---|---|---|---|---|---|
-
-## Callouts (6+ · ≤25)
-
-| Texto | NN |
-|---|---|
-
-## Snippet estruturado (cabeçalho da lista fixa · valores ≤25)
-
-Cabeçalho: <Tipos/Estilos/...>
-
-| Valor | NN |
-|---|---|
-
-## Extensões adicionais (se aplicável)
-
-<Promoção / preço / imagem — com requisitos atendidos e data de coleta.>
+Preenchidas em `03-extensoes.md` (sitelinks, callouts, snippets
+obrigatórios; imagem/promoção/preço conforme `master/extensoes-ativos.md`).
 
 ## Geração dos CSVs
 

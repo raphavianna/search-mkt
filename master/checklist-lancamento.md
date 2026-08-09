@@ -18,12 +18,15 @@ não sobe.
 - [ ] 15 títulos e 4 descrições por RSA; pins só onde justificado
 - [ ] Copy promete só o que a página sustenta; preço/promoção com data
 - [ ] Entidade correta: "Use Zero Hora" = surf/beachwear (zero colisão com o jornal)
-- [ ] URLs finais respondem 200 e batem com o produto do grupo
-- [ ] Sitelinks (4+), callouts (6+), snippet (1 cabeçalho + 3+ valores)
+- [ ] URLs finais **https**, sem `www`, respondem 200 sem redirect e batem com o produto do grupo (nunca a home, salvo campanha institucional)
+- [ ] **Extensões obrigatórias** preenchidas em `03-extensoes.md`: sitelinks (4+, cada um com 2 descrições), callouts (6+), snippet (1 cabeçalho + 3+ valores)
+- [ ] Sitelinks apontam para páginas distintas entre si e da URL final
+- [ ] Imagem avaliada; promoção/preço só se a página sustentar (com data)
 
 ## Setup
 
-- [ ] Nomenclatura do master aplicada (campanha e grupos)
+- [ ] Taxonomia do master aplicada: campanha `[NNN-CANAL]-TEMA`, grupos `[NNN-L]-SUBTEMA-INTENCAO` com o NNN da campanha-mãe
+- [ ] `Final URL suffix` com UTM padrão preenchido (ou decisão registrada de não usar)
 - [ ] Rede: Pesquisa Google; **parceiros de pesquisa e Display desligados**
 - [ ] Localização: Brasil (ou recorte com racional); idioma português
 - [ ] Lance inteligente (Maximizar conversões; tCPA/tROAS só com histórico do cluster) — manual exige justificativa escrita

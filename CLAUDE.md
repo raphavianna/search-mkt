@@ -177,6 +177,13 @@ racional escrito.
   valores máx. 25 caracteres;
 - *Extensões adicionais* quando aplicável: promoção, preço, imagem — com os
   requisitos de cada uma;
+**Extensões são obrigatórias, não opcionais**: sitelinks (4+), callouts
+(6+) e snippets estruturados entram em TODA campanha de Search, com
+imagem recomendada e promoção/preço quando a página sustentar. Regras e
+critérios de escolha em `master/extensoes-ativos.md`; os textos vão para
+`campanhas/<slug>/03-extensoes.md`. Como o Google não oferece template de
+upload em massa para ativos, esta é a única exceção autorizada à regra do
+CSV: os ativos são cadastrados pela interface a partir desse arquivo.
 - *Setup*: nomenclatura padrão da campanha (do master), rede (pesquisa, sem
   display), localização (Brasil ou recorte com racional), idioma, estratégia
   de lance recomendada e orçamento sugerido derivado de CPC × volume do
@@ -214,7 +221,7 @@ Estrutura:
   CSV do Ads Editor, checklist de lançamento, padrão de nomenclatura,
   biblioteca de negativas da marca;
 - `campanhas/<slug>/` — uma pasta por campanha: `00-produtos.md`,
-  `01-kws.md`, `02-ads.md`, `03-csv/`, `04-medicao.md`;
+  `01-kws.md`, `02-ads.md`, `03-extensoes.md`, `03-csv/`, `04-medicao.md`;
 - `data/` — bases fornecidas na mão (Excel/CSV), organizadas por campanha ou
   tema, com nome datado e proveniência registrada;
 - `reports/` — snapshots datados de Semrush/Similarweb e resumos de leitura
