@@ -36,7 +36,15 @@ da campanha **004** (número não bate com a campanha-mãe),
 `Grupo de anúncios 1` (nome default), `PONCHO-01`,
 `[005-LYCRA-SHOPPING]`.
 
-## Recomendações (nenhuma aplicada — dependem de aprovação)
+## Situação das recomendações (atualizado 2026-08-09, fim do dia)
+
+| # | Recomendação | Status |
+|---|---|---|
+| 1 | URL da campanha 006 | **não aplicada** — grupo mistura gênero (15 fem. × 4 masc. × 28 neutras) e só há a URL masculina; correção real é dividir o grupo |
+| 2 | UTM no nível da conta | **aplicada** (`manutencao/2026-08-09-tracking-utm/`) |
+| 3 | Taxonomia de nomes | **aplicada** (`reports/2026-08-09-google-ads-renomeacao-aplicada.md`) |
+
+## Recomendações (texto original da auditoria)
 
 1. **URL da 006-LYCRA-SEARCH:** trocar para a URL canônica https da
    categoria lycra (ex.: página de coleção), não a home — relevância e

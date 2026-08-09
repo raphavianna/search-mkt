@@ -141,6 +141,25 @@ class GoogleAdsClient:
         return _request(url, data=json.dumps(body).encode("utf-8"),
                         headers=self._headers())
 
+    def atualizar_customer(self, campos, validate_only=True, customer_id=None):
+        """Atualiza campos da própria conta (ex.: finalUrlSuffix).
+
+        `CustomerService.MutateCustomer` usa `operation` no singular, por
+        isso não passa pelo `mutate()` genérico. `updateMask` é derivado
+        das chaves de `campos` — nada fora delas é alcançável.
+        """
+        cid = (customer_id or self.customer_id).replace("-", "")
+        url = f"{API_HOST}/{self.api_version}/customers/{cid}:mutate"
+        body = {
+            "operation": {
+                "update": {"resourceName": f"customers/{cid}", **campos},
+                "updateMask": ",".join(campos),
+            },
+            "validateOnly": bool(validate_only),
+        }
+        return _request(url, data=json.dumps(body).encode("utf-8"),
+                        headers=self._headers())
+
     def renomear(self, entidade, ids_e_nomes, validate_only=True, customer_id=None):
         """Renomeia entidades. `ids_e_nomes`: lista de (id, novo_nome).
 
