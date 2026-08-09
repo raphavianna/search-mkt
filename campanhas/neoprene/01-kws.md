@@ -1,5 +1,15 @@
 # [Campanha Neoprene] 01 — Setup de keywords
 
+> **⚠️ LISTA VIGENTE (2026-08-09): a lista de KWs oficial da campanha é
+> `kw-planner/kw-consolidada-neoprene.csv`** (336 KWs, 13 grupos),
+> consolidação de: export do Keyword Manager fornecido pelo usuário
+> (`data/neoprene/…`, resumo em
+> `reports/2026-08-09-neoprene-kw-manager-resumo.md`) + lista colada pelo
+> usuário (camisa neoprene + concorrentes) + lista desta sessão. Grupos
+> novos: sapatilha-areia, bermuda-surf, bermuda-natacao, neoprene-surf,
+> neoprene-natacao, neoprene-concorrencia (não ativar). As seções abaixo
+> preservam o racional original e a análise de funil.
+
 > Fontes: Semrush MCP, database BR, coletado em **2026-08-09** —
 > snapshot completo em `reports/2026-08-09-neoprene-semrush.md`.
 > Intenção (Semrush): 0 Comercial · 1 Informacional · 2 Navegacional ·
