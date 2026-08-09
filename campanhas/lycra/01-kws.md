@@ -1,6 +1,9 @@
 # [006-SEARCH]-LYCRA — Etapa 1: diagnóstico e estrutura proposta
 
-> **Status: PROPOSTA — nada aplicado.** Aguarda decisão do usuário.
+> **Status: APLICADO em 2026-08-09.** A estrutura final ficou em **3
+> grupos**, não 4: o usuário reforçou que a campanha é nova e pediu
+> desenho best-in-class para o estado do negócio, e a granularidade foi
+> reduzida na medida — ver `manutencao/2026-08-09-lycra-estrutura/`.
 > **Fontes:** API Google Ads (conta 2614617888), coleta de 2026-08-09 —
 > `keyword_view`, `search_term_view` e `campaign` (acumulado da campanha e
 > últimos 30 dias da conta). Snapshot dos termos em
@@ -98,7 +101,7 @@ Cor, manga, tecnologia e modalidade **não** passam nesses testes: mesma
 página, mesmo argumento. Viram variação dentro do RSA (que já escolhe o
 título conforme a busca) e alvo de colheita de termos, não grupo próprio.
 
-## 3. Estrutura proposta — 4 grupos
+## 3. Estrutura — 4 grupos (proposta original; ver revisão abaixo)
 
 | Grupo | Característica | Página | Ângulo do RSA |
 |---|---|---|---|
@@ -217,3 +220,24 @@ registrada aqui.
 
 Os passos 1–5 saem como CSV no modelo do master e podem ser aplicados por
 API, como as manutenções anteriores.
+
+
+## 8. Revisão da estrutura (2026-08-09, após feedback)
+
+O usuário observou que a campanha é **nova** — o volume baixo é idade, não
+doença — e pediu estrutura best-in-class dimensionada ao orçamento e ao
+estado do negócio. Isso derrubou o 4º grupo (`LYCRA-SURF`), que foi
+absorvido pelo `[006-C]-UV-GERAL`.
+
+**Correção técnica ao racional da seção 2:** dizer que fragmentar
+"impede o lance inteligente de aprender" é impreciso — Smart Bidding
+aprende no nível da **campanha**, então o número de grupos não dilui o
+sinal de lance. O que a fragmentação realmente dilui é o **aprendizado do
+RSA**, que é por anúncio: mais grupos, mais anúncios, menos impressões
+por anúncio para o Google testar combinações de títulos. A conclusão (3
+grupos, não 8) continua valendo; o motivo correto é esse.
+
+Critério final aplicado: **grupo novo só se mudar a página de destino.**
+Vocabulário (surf × proteção solar) muda copy, e copy é resolvida dentro
+dos 15 títulos do RSA. Gatilho para reabrir o 4º grupo: ~30
+conversões/mês na campanha.
