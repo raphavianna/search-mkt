@@ -222,6 +222,8 @@ Estrutura:
   biblioteca de negativas da marca;
 - `campanhas/<slug>/` — uma pasta por campanha: `00-produtos.md`,
   `01-kws.md`, `02-ads.md`, `03-extensoes.md`, `03-csv/`, `04-medicao.md`;
+- `manutencao/<data-assunto>/` — CSVs de manutenção da conta (renomeação,
+  pausa, ajuste de parâmetro) com o de-para e a ordem de subida em README;
 - `data/` — bases fornecidas na mão (Excel/CSV), organizadas por campanha ou
   tema, com nome datado e proveniência registrada;
 - `reports/` — snapshots datados de Semrush/Similarweb e resumos de leitura

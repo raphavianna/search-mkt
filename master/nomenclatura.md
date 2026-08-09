@@ -40,14 +40,36 @@ Ex. — campanha `[007-SEARCH]-NEOPRENE`:
 [007-D]-NEOPRENE-GENERICO
 ```
 
-## Estado da base instalada (auditoria 2026-08-09, em `reports/`)
+Regras de preenchimento:
 
-A conta tem padrões mistos: `006-A-LYCRA-GERAL` (já quase no padrão),
-`[001-MAIO-LANCAMENTOS]` dentro da campanha 004 (número não bate),
-`Grupo de anúncios 1` (default), `PONCHO-01`. **Campanhas novas nascem na
-taxonomia oficial; renomear a base instalada só com pedido explícito**
-(renomear não apaga histórico de performance, mas muda relatórios e
-regras salvas que filtram por nome).
+- O tema não se repete no grupo quando já está na campanha — o elo é o
+  número. Em `[004-SHOPPING]-MAIO`, os grupos são `[004-A]-LANCAMENTOS-…`,
+  não `[004-A]-MAIO-LANCAMENTOS-…`.
+- Não repetir o canal no tema (`[003-SHOPPING]-PONCHO`, nunca
+  `[003-SHOPPING]-PONCHO-SHOPPING`).
+- Sem espaços: hífen sempre, inclusive depois do colchete.
+- **Shopping**: grupo é recorte de produto, então a intenção é `COMPRA`
+  por padrão (anúncio de produto é fundo de funil).
+
+## Grupo de ativos (Performance Max)
+
+```
+[NNN-L]-SUBTEMA
+```
+
+Ex.: `[001-A]-PONCHO-FEMININO`. Não há upload em massa para grupos de
+ativos — renomeação pela interface.
+
+## Estado da base instalada
+
+Auditoria de 2026-08-09 encontrou padrões mistos (`Grupo de anúncios 1`
+default, `[001-MAIO-LANCAMENTOS]` dentro da campanha **004**, canal e
+tema invertidos em 004/005/006). O de-para completo e os CSVs de
+renomeação estão em `manutencao/2026-08-09-taxonomia/`.
+
+Renomear **não apaga histórico de performance** (a métrica segue o ID),
+mas quebra relatórios salvos, regras automatizadas e painéis que filtrem
+**por nome** — conferir esses depois de aplicar.
 
 ## Arquivos de campanha (repositório)
 
