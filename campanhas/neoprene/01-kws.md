@@ -9,6 +9,12 @@
 > novos: sapatilha-areia, bermuda-surf, bermuda-natacao, neoprene-surf,
 > neoprene-natacao, neoprene-concorrencia (não ativar). As seções abaixo
 > preservam o racional original e a análise de funil.
+>
+> **Revisão de 2026-08-09 (2ª)**: removidas da lista vigente 13 KWs a
+> pedido do usuário — termos com "infantil" (4), com "acessórios" (6) e
+> os genéricos de marca sem produto "use zero hora" / "usezerohora" /
+> "zero hora surf" (3), que já rodam na **campanha institucional**. O
+> grupo neoprene-marca fica só com marca+produto (4 KWs). Total: 323 KWs.
 
 > Fontes: Semrush MCP, database BR, coletado em **2026-08-09** —
 > snapshot completo em `reports/2026-08-09-neoprene-semrush.md`.
@@ -220,13 +226,14 @@ promover a frase o que acumular impressão.
 
 | KW | Volume | Racional |
 |---|---|---|
-| use zero hora | n/c | defesa de marca — barata e de QS alto; garante o topo contra marketplaces |
-| usezerohora | n/c | idem |
 | use zero hora neoprene | n/c | marca + categoria |
 | sapatilha use zero hora | n/c | marca + produto |
 | camiseta neoprene use zero hora | n/c | idem |
 | bermuda use zero hora | n/c | idem |
-| zero hora surf | n/c | única variante "zero hora" sem "use" aceita — qualificador "surf" desambigua do jornal; observar termos de pesquisa |
+
+Termos genéricos de marca ("use zero hora", "usezerohora", "zero hora
+surf") **removidos em 2026-08-09**: já rodam na campanha institucional da
+marca — mantê-los aqui geraria competição interna de leilão.
 
 ## 3. Consideração (meio de funil)
 
