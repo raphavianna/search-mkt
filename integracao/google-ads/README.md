@@ -9,8 +9,9 @@ sem vincular a conta a nenhuma MCC.
 ```
 Claude Code (web) ──► variáveis de ambiente (credenciais)
         │
-        ├── gads.py            cliente REST (OAuth refresh + GAQL)
-        └── check_conexao.py   verificação de conexão e diagnóstico
+        ├── gads.py            cliente REST (OAuth refresh + GAQL + mutate)
+        ├── check_conexao.py   verificação de conexão e diagnóstico
+        └── aplicar_rename.py  aplica renomeações dos CSVs de manutenção
                 │
                 ▼
    googleads.googleapis.com (REST, v21)
@@ -74,6 +75,29 @@ sucesso ou o erro exato, para saber onde parou.
   rodou na conta. Snapshots datados vão para `reports/`, como sempre.
 - **Etapa 3 (medição)**: acompanhamento de termos de pesquisa, Quality
   Score, conversões por grupo direto da conta.
-- A **subida** de campanhas continua pelo fluxo aprovado (CSVs do Google
-  Ads Editor); a API entra como fonte de leitura e diagnóstico. Escrita
-  via API só com pedido explícito.
+- A **criação** de campanhas continua pelo fluxo aprovado (CSVs no modelo
+  de `master/templates-csv/`).
+
+## Escrita via API
+
+Liberada pelo usuário em 2026-08-09 para **manutenção** (a criação de
+campanha segue por CSV). Regras:
+
+1. **O CSV continua sendo a fonte auditável.** `aplicar_rename.py` lê os
+   CSVs de `manutencao/` e executa o que está neles — a planilha
+   versionada e a conta não divergem.
+2. **Simulação obrigatória antes.** `client.mutate()` e
+   `client.renomear()` nascem com `validate_only=True`; gravar exige
+   passar a flag explicitamente (`--aplicar` no script).
+3. **Escopo mínimo.** `renomear()` envia `updateMask=name` — por
+   construção nenhum outro campo da entidade pode ser alterado.
+4. **Conferência depois.** Reconsultar o estado na conta e validar
+   contra a regra pretendida; salvar snapshot em `reports/` quando a
+   mudança for relevante.
+5. Operação destrutiva (remover, pausar campanha ativa) só com pedido
+   explícito do usuário, nunca por iniciativa própria.
+
+```bash
+python3 aplicar_rename.py ../../manutencao/<pasta>/*.csv            # simula
+python3 aplicar_rename.py ../../manutencao/<pasta>/*.csv --aplicar  # grava
+```

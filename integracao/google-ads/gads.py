@@ -129,6 +129,38 @@ class GoogleAdsClient:
         resp = _request(url, headers=self._headers(), method="GET")
         return [r.split("/")[-1] for r in resp.get("resourceNames", [])]
 
+    def mutate(self, entidade, operations, validate_only=True, customer_id=None):
+        """Aplica operações de escrita em um recurso (ex.: 'campaigns').
+
+        `validate_only=True` (padrão) só valida no servidor, sem gravar —
+        é a simulação obrigatória antes de qualquer aplicação real.
+        """
+        cid = (customer_id or self.customer_id).replace("-", "")
+        url = f"{API_HOST}/{self.api_version}/customers/{cid}/{entidade}:mutate"
+        body = {"operations": operations, "validateOnly": bool(validate_only)}
+        return _request(url, data=json.dumps(body).encode("utf-8"),
+                        headers=self._headers())
+
+    def renomear(self, entidade, ids_e_nomes, validate_only=True, customer_id=None):
+        """Renomeia entidades. `ids_e_nomes`: lista de (id, novo_nome).
+
+        Envia updateMask='name': por construção, nenhum outro campo da
+        entidade pode ser alterado por esta chamada.
+        """
+        cid = (customer_id or self.customer_id).replace("-", "")
+        ops = [
+            {
+                "update": {
+                    "resourceName": f"customers/{cid}/{entidade}/{ent_id}",
+                    "name": nome,
+                },
+                "updateMask": "name",
+            }
+            for ent_id, nome in ids_e_nomes
+        ]
+        return self.mutate(entidade, ops, validate_only=validate_only,
+                           customer_id=customer_id)
+
     def search(self, query, customer_id=None):
         """Executa GAQL via googleAds:search e devolve a lista de resultados."""
         cid = (customer_id or self.customer_id).replace("-", "")

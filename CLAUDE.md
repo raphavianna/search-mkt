@@ -45,6 +45,13 @@ recuperar além do que está escrito aqui e commitado no repositório.
    sem executá-los até pedido explícito.
 5. Fontes de dados: Semrush MCP + Similarweb MCP + bases na mão (Excel/CSV)
    fornecidas pelo usuário, com as regras de <ferramentas_de_dados>.
+6. A conta está integrada por API (`integracao/google-ads/`, conta direta
+   sem MCC, REST v25). Leitura livre. **Escrita liberada para manutenção**
+   (2026-08-09): o CSV de `manutencao/` segue sendo a fonte auditável e o
+   script apenas o executa, sempre com simulação (`validateOnly`) antes,
+   escopo mínimo de campos e conferência do estado final depois. Criação
+   de campanha continua saindo por CSV. Remover ou pausar só com pedido
+   explícito.
 
 **Contexto de marca (resumo herdado do projeto SEO):** Use Zero Hora é D2C
 brasileira de surf/beachwear (São Paulo, fundada em 2023), fabricação

@@ -1,5 +1,10 @@
 # Renomeação para a taxonomia oficial — 2026-08-09
 
+> **STATUS: APLICADO em 2026-08-09, via API** (a pedido do usuário), com
+> `integracao/google-ads/aplicar_rename.py` lendo estes mesmos CSVs.
+> Simulação (`validateOnly`) aprovada antes da gravação; estado final
+> conferido por consulta contra a regex da taxonomia — 13/13 conformes.
+
 Alinha a base instalada ao padrão de `master/nomenclatura.md`. Só muda
 **nome**: nenhum lance, orçamento, status, KW ou anúncio é tocado.
 Identificação por **ID** (a coluna `Campaign ID` / `Ad group ID` é o que
@@ -7,16 +12,22 @@ garante renomear a entidade existente em vez de criar uma nova).
 
 Dados de origem: consulta GAQL na conta 2614617888 em 2026-08-09.
 
-## Ordem de subida (obrigatória)
+## Como foi aplicado
 
-1. `01-campanhas-rename.csv`
-2. `02-grupos-rename.csv`
+```bash
+cd integracao/google-ads
+python3 aplicar_rename.py ../../manutencao/2026-08-09-taxonomia/*.csv            # simula
+python3 aplicar_rename.py ../../manutencao/2026-08-09-taxonomia/*.csv --aplicar  # grava
+```
 
-Campanhas primeiro: o arquivo de grupos já traz o **novo** nome da
-campanha na coluna `Campaign`. Subir fora de ordem faz o nome não bater.
+O script envia `updateMask=name`: por construção, nenhum outro campo
+pode ser alterado, mesmo que o CSV tenha valor em outra coluna.
 
-Caminho: **Ferramentas e configurações → Ações em massa → Uploads**.
-Sempre usar a **pré-visualização** antes de aplicar.
+**Alternativa manual** (se preferir a interface): subir em
+**Ferramentas e configurações → Ações em massa → Uploads**, nesta ordem —
+`01-campanhas-rename.csv` e depois `02-grupos-rename.csv` (o arquivo de
+grupos já traz o **novo** nome da campanha na coluna `Campaign`; fora de
+ordem o nome não bate). Sempre usar a pré-visualização.
 
 ## De-para — campanhas
 
@@ -44,20 +55,23 @@ O tema (MAIO, PONCHO, LYCRA) sai do nome do grupo quando já está na
 campanha — o elo é o número. `AON` foi preservado como subtema por ser
 termo interno da operação; se significar outra coisa, é só ajustar.
 
-## Passo manual — grupo de ativos da PMax
-
-O Google não oferece upload em massa para **grupos de ativos**. Renomear
-pela interface:
+## Grupo de ativos da PMax — aplicado por API
 
 | Campanha | Atual | Novo |
 |---|---|---|
 | `[001-PMAX]-PONCHO-FEMININO` | `001 - PONCHO FEMININO` | `[001-A]-PONCHO-FEMININO` |
 
-## Conferência após aplicar
+Não existe upload em massa para **grupos de ativos**, então pela via CSV
+isso seria um passo manual na interface. Pela API foi aplicado junto com
+o resto (`assetGroups`), o que fecha 100% da taxonomia — vantagem real
+da via API sobre a planilha neste caso.
 
-- A pré-visualização deve mostrar **5 campanhas alteradas** e
-  **6 grupos alterados**, todas do tipo "nome". Se aparecer criação de
-  campanha ou grupo, **cancelar** — sinal de ID errado ou ordem trocada.
+## Conferência (feita em 2026-08-09)
+
+- Estado final consultado na conta e validado contra a regex da
+  taxonomia: **13/13 conformes** (6 campanhas, 6 grupos de anúncio,
+  1 grupo de ativos), incluindo o elo número-do-grupo ↔ campanha-mãe.
 - Renomear **não apaga histórico de performance** (a métrica segue o ID).
-- Verificar depois: relatórios salvos, regras automatizadas, scripts e
-  painéis que filtrem campanha **por nome** — esses precisam do nome novo.
+- **Pendente do usuário:** revisar relatórios salvos, regras
+  automatizadas, scripts e painéis que filtrem campanha **por nome** —
+  esses precisam ser atualizados para os nomes novos.
