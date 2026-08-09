@@ -188,6 +188,14 @@
   do Semrush inclui Shopping/histórico; a leitura adotada é: **leilão de
   texto pouco disputado**, pressão vem de Shopping/marketplaces.
 
+## 5.1 Batch de expansão — FALHOU (créditos)
+
+Segundo `phrase_these` (~95 variações de cauda longa: surf, meia/bota,
+térmica, água fria, marca) tentado em 2026-08-09 retornou
+**403 ERROR 132 — API UNITS BALANCE IS ZERO**. Dado indisponível via
+Semrush. A expansão entrou em `01-kws.md` §2.1 sem métricas ("n/c");
+revalidar quando os créditos renovarem.
+
 ## 6. Similarweb
 
 Não consultado nesta etapa (economia de créditos; concorrência de texto

@@ -66,11 +66,29 @@
   surf — ajuste firme com cordão interno, resistência à água salgada e
   visual clean do mar para o dia a dia.
 
-## Produto 3 — Sapatilha esportiva de neoprene
+## Produto 3 — Sapatilha esportiva de neoprene ("Sapatilha KR")
 
 - **URL final**: https://usezerohora.com.br/produtos/sapatilha-esportiva-neoprene-xlgci/
-- **Todos os campos**: dado indisponível — infográficos ainda não
-  recebidos (aguardando)
+- **Preço**: não abordar em copy (decisão do usuário, 2026-08-09)
+- **Numeração** (tabela de medidas oficial): P 34–37 · M 38–41 · G 42–44
+  → cobertura do 34 ao 44; serve homem e mulher (utilizável em copy)
+- **Material/tecnologia** (infográficos, 2026-08-09) — "três tecidos
+  técnicos":
+  1. **Solado Neoprene Shak**: antiderrapante, alta aderência, resistência
+     à abrasão, flexível
+  2. **Punho duplo em poliamida opaca**: alta elasticidade, toque macio,
+     ajuste à perna, secagem rápida
+  3. **Contorno do pé em neoprene nylon 1,5 mm** (revestido em ambas as
+     faces): isolamento térmico, flexibilidade, secagem rápida, resistente
+     à água e ao vento
+- **Benefícios e atributos** (literais dos infográficos):
+  - Proteção e durabilidade: material que protege e aumenta a vida útil
+  - Secagem rápida: tecidos que não retêm água
+  - Leveza e conforto: liberdade de movimento
+  - Aderência e segurança: solado antiderrapante, mais estabilidade
+- **Proposta de valor para anúncio**: sapatilha aquática de neoprene com
+  solado antiderrapante e isolamento térmico — proteção e aderência do
+  costão à areia, do 34 ao 44, com secagem rápida.
 
 ---
 
@@ -88,14 +106,21 @@ Herdados do contexto de marca (CLAUDE.md), **ainda a reconfirmar** no site:
 - Envio em até 24h úteis para todo o Brasil
 - Cores vibrantes que destacam o surfista no mar
 
+## Decisões de copy registradas (usuário, 2026-08-09)
+
+- **Preço: não abordar** em nenhuma peça da campanha.
+- **Grade das roupas (camiseta/bermuda) é P a G: não abordar** tamanhos de
+  roupa em copy (grade pequena). A numeração da sapatilha (34–44) pode ser
+  usada.
+
 ## Observações e lacunas
 
-- **Sapatilha sem dados** — é o cluster de maior volume da campanha
-  (~35k buscas/mês); prioridade máxima de coleta.
-- Preço/parcelamento, tamanhos e cores ausentes nos infográficos —
-  necessários para copy de oferta e para decidir KWs de gênero
-  ("feminina"/"masculina") e a negativa provisória "infantil".
-- Público (unissex? adulto?) não declarado — imagens mostram modelo
-  masculino; não assumir em copy.
-- Espessura do neoprene da bermuda não declarada (camiseta: 1,5 mm).
-- Página de categoria neoprene: existência não confirmada.
+- Público adulto; imagens com modelo masculino; sapatilha 34–44 atende
+  homem e mulher → KWs de gênero da sapatilha mantidas; negativa
+  "infantil" **mantida**.
+- Espessura do neoprene da bermuda não declarada (camiseta e sapatilha:
+  1,5 mm) — não citar espessura na copy da bermuda.
+- Página de categoria neoprene: existência não confirmada (segue como
+  pendência para a URL do grupo genérico).
+- Cores não declaradas nos infográficos (peças mostradas em preto) — não
+  citar cores em copy até confirmação.
