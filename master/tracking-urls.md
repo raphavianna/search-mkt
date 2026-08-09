@@ -70,17 +70,18 @@ preenchidos.
   subir (item do checklist).
 - Sitelinks nunca repetem a URL final do anúncio nem uns aos outros.
 
-## Pendência conhecida na conta
+## Caso resolvido — campanha 006 (referência de método)
 
-`[006-SEARCH]-LYCRA` usa `http://www.usezerohora.com.br` — http, com
-`www` e apontando para a home. **Não corrigido ainda**: o grupo único
-`[006-A]-LYCRA-GENERICO` mistura intenções de gênero (15 KWs femininas,
-4 masculinas, 28 neutras), e existe só a URL masculina
-(`https://usezerohora.com.br/masculino/lycra-surf/`). Apontar tudo para
-ela mandaria as 15 femininas para a página errada. Correção proposta:
-dividir em `[006-A]-LYCRA-MASCULINA`, `[006-B]-LYCRA-FEMININA` e
-`[006-C]-LYCRA-GENERICO`, cada um com sua URL. Aguardando as URLs
-feminina e da categoria-mãe.
+`[006-SEARCH]-LYCRA` apontava para `http://www.usezerohora.com.br` (http,
+`www`, home) com um grupo único de 47 KWs misturando gênero. **Resolvido
+em 2026-08-09** dividindo em três grupos, cada um com a URL da sua
+coleção — ver `manutencao/2026-08-09-lycra-split/`.
+
+Lição que virou regra: **URL errada raramente se resolve trocando a URL**.
+Quando um grupo mistura intenções (gênero, categoria, estágio de funil),
+nenhuma URL única serve — o conserto é dividir o grupo. Antes de corrigir
+uma URL, classifique as keywords do grupo e confira se elas apontam para
+o mesmo destino.
 
 ## Limitação do ambiente
 
