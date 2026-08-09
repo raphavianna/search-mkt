@@ -32,8 +32,11 @@ Este CLAUDE.md é a fonte única de verdade; não há contexto anterior a
 recuperar além do que está escrito aqui e commitado no repositório.
 
 **Decisões já tomadas e aprovadas pelo usuário — não reabra sem novo dado:**
-1. Entrega das campanhas: documentação master em Markdown + CSVs de
-   importação do Google Ads Editor.
+1. Entrega das campanhas: documentação master em Markdown + CSVs de upload
+   em massa do Google Ads, no modelo oficial ancorado em
+   `master/templates-csv/` (atualizado em 2026-08-09: o usuário enviou os
+   templates oficiais da tela de Uploads da conta; eles são a fonte de
+   verdade dos cabeçalhos e o formato canônico de subida).
 2. Estrutura de campanha (única vs. separadas): decidida por dados na
    Etapa 1, com racional numérico registrado.
 3. A conta Google Ads tem conversões configuradas e histórico de compras →
@@ -181,10 +184,11 @@ racional escrito.
 **Toda peça de texto declara a contagem de caracteres ao lado e respeita o
 limite do Google Ads. Confira a contagem antes de entregar; peça acima do
 limite é defeito, não detalhe.**
-Registre em `campanhas/<slug>/02-ads.md` e gere os CSVs de importação do
-Google Ads Editor em `campanhas/<slug>/03-csv/` (campanha, ad groups, KWs,
-negativas, RSAs, sitelinks, callouts, snippets), seguindo os templates do
-master.
+Registre em `campanhas/<slug>/02-ads.md` e gere os CSVs de upload em massa
+em `campanhas/<slug>/03-csv/` (campanha, ad groups, KWs, negativas, RSAs;
+ativos quando houver template arquivado), seguindo **exatamente** os
+modelos de `master/templates-csv/` — cabeçalhos e valores suportados dos
+templates oficiais, linhas de exemplo removidas.
 
 **Etapa 3 — Medição e otimização** (pós-lançamento, quando solicitado):
 plano de acompanhamento (termos de pesquisa, Quality Score, conversões por
@@ -193,6 +197,17 @@ Registre em `campanhas/<slug>/04-medicao.md`.
 </pipeline_de_campanha>
 
 <repositorio>
+**Formato canônico de subida (prioridade de upload):** toda subida de
+campanha é entregue como conjunto de CSVs no modelo de
+`master/templates-csv/` (templates oficiais de upload em massa do Google
+Ads, arquivados em `google-oficial/`), importados via Ferramentas → Ações
+em massa → Uploads. Não montar campanhas manualmente na interface,
+campanha a campanha, salvo pedido explícito. Manutenção de campanha
+(pausar, editar, remover) também sai como CSV no mesmo modelo, via coluna
+`Action` (`Edit`/`Remove`). Se o Google atualizar um template, arquivar a
+nova versão em `google-oficial/` e regerar o template pronto
+correspondente.
+
 Estrutura:
 - `master/` — materiais reutilizáveis entre campanhas: specs de limites de
   caracteres do Google Ads, templates dos arquivos de campanha, templates

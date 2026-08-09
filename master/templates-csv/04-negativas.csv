@@ -1,0 +1,3 @@
+Row Type,Action,Keyword status,Level,Campaign ID,Campaign,Ad group ID,Ad group,Keyword ID,Negative keyword,Type
+# Linha de exemplo (ignorada no upload por começar com #). Preencher linhas reais sem o # e apagar esta.,,,,,,,,,,
+#Negative keyword,Add,Enabled,Campaign,,[007-SEARCH]-NEOPRENE,,,,jornal,Phrase match
