@@ -32,8 +32,11 @@ Este CLAUDE.md é a fonte única de verdade; não há contexto anterior a
 recuperar além do que está escrito aqui e commitado no repositório.
 
 **Decisões já tomadas e aprovadas pelo usuário — não reabra sem novo dado:**
-1. Entrega das campanhas: documentação master em Markdown + CSVs de
-   importação do Google Ads Editor.
+1. Entrega das campanhas: documentação master em Markdown + CSVs de upload
+   em massa do Google Ads, no modelo oficial ancorado em
+   `master/templates-csv/` (atualizado em 2026-08-09: o usuário enviou os
+   templates oficiais da tela de Uploads da conta; eles são a fonte de
+   verdade dos cabeçalhos e o formato canônico de subida).
 2. Estrutura de campanha (única vs. separadas): decidida por dados na
    Etapa 1, com racional numérico registrado.
 3. A conta Google Ads tem conversões configuradas e histórico de compras →
@@ -42,6 +45,13 @@ recuperar além do que está escrito aqui e commitado no repositório.
    sem executá-los até pedido explícito.
 5. Fontes de dados: Semrush MCP + Similarweb MCP + bases na mão (Excel/CSV)
    fornecidas pelo usuário, com as regras de <ferramentas_de_dados>.
+6. A conta está integrada por API (`integracao/google-ads/`, conta direta
+   sem MCC, REST v25). Leitura livre. **Escrita liberada para manutenção**
+   (2026-08-09): o CSV de `manutencao/` segue sendo a fonte auditável e o
+   script apenas o executa, sempre com simulação (`validateOnly`) antes,
+   escopo mínimo de campos e conferência do estado final depois. Criação
+   de campanha continua saindo por CSV. Remover ou pausar só com pedido
+   explícito.
 
 **Contexto de marca (resumo herdado do projeto SEO):** Use Zero Hora é D2C
 brasileira de surf/beachwear (São Paulo, fundada em 2023), fabricação
@@ -174,6 +184,13 @@ racional escrito.
   valores máx. 25 caracteres;
 - *Extensões adicionais* quando aplicável: promoção, preço, imagem — com os
   requisitos de cada uma;
+**Extensões são obrigatórias, não opcionais**: sitelinks (4+), callouts
+(6+) e snippets estruturados entram em TODA campanha de Search, com
+imagem recomendada e promoção/preço quando a página sustentar. Regras e
+critérios de escolha em `master/extensoes-ativos.md`; os textos vão para
+`campanhas/<slug>/03-extensoes.md`. Como o Google não oferece template de
+upload em massa para ativos, esta é a única exceção autorizada à regra do
+CSV: os ativos são cadastrados pela interface a partir desse arquivo.
 - *Setup*: nomenclatura padrão da campanha (do master), rede (pesquisa, sem
   display), localização (Brasil ou recorte com racional), idioma, estratégia
   de lance recomendada e orçamento sugerido derivado de CPC × volume do
@@ -181,10 +198,11 @@ racional escrito.
 **Toda peça de texto declara a contagem de caracteres ao lado e respeita o
 limite do Google Ads. Confira a contagem antes de entregar; peça acima do
 limite é defeito, não detalhe.**
-Registre em `campanhas/<slug>/02-ads.md` e gere os CSVs de importação do
-Google Ads Editor em `campanhas/<slug>/03-csv/` (campanha, ad groups, KWs,
-negativas, RSAs, sitelinks, callouts, snippets), seguindo os templates do
-master.
+Registre em `campanhas/<slug>/02-ads.md` e gere os CSVs de upload em massa
+em `campanhas/<slug>/03-csv/` (campanha, ad groups, KWs, negativas, RSAs;
+ativos quando houver template arquivado), seguindo **exatamente** os
+modelos de `master/templates-csv/` — cabeçalhos e valores suportados dos
+templates oficiais, linhas de exemplo removidas.
 
 **Etapa 3 — Medição e otimização** (pós-lançamento, quando solicitado):
 plano de acompanhamento (termos de pesquisa, Quality Score, conversões por
@@ -193,13 +211,26 @@ Registre em `campanhas/<slug>/04-medicao.md`.
 </pipeline_de_campanha>
 
 <repositorio>
+**Formato canônico de subida (prioridade de upload):** toda subida de
+campanha é entregue como conjunto de CSVs no modelo de
+`master/templates-csv/` (templates oficiais de upload em massa do Google
+Ads, arquivados em `google-oficial/`), importados via Ferramentas → Ações
+em massa → Uploads. Não montar campanhas manualmente na interface,
+campanha a campanha, salvo pedido explícito. Manutenção de campanha
+(pausar, editar, remover) também sai como CSV no mesmo modelo, via coluna
+`Action` (`Edit`/`Remove`). Se o Google atualizar um template, arquivar a
+nova versão em `google-oficial/` e regerar o template pronto
+correspondente.
+
 Estrutura:
 - `master/` — materiais reutilizáveis entre campanhas: specs de limites de
   caracteres do Google Ads, templates dos arquivos de campanha, templates
   CSV do Ads Editor, checklist de lançamento, padrão de nomenclatura,
   biblioteca de negativas da marca;
 - `campanhas/<slug>/` — uma pasta por campanha: `00-produtos.md`,
-  `01-kws.md`, `02-ads.md`, `03-csv/`, `04-medicao.md`;
+  `01-kws.md`, `02-ads.md`, `03-extensoes.md`, `03-csv/`, `04-medicao.md`;
+- `manutencao/<data-assunto>/` — CSVs de manutenção da conta (renomeação,
+  pausa, ajuste de parâmetro) com o de-para e a ordem de subida em README;
 - `data/` — bases fornecidas na mão (Excel/CSV), organizadas por campanha ou
   tema, com nome datado e proveniência registrada;
 - `reports/` — snapshots datados de Semrush/Similarweb e resumos de leitura

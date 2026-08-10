@@ -1,0 +1,15 @@
+# Credenciais e segredos — NUNCA commitar
+.env
+.env.*
+!.env.example
+google-ads.yaml
+*credentials*.json
+*token*.json
+client_secret*.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
