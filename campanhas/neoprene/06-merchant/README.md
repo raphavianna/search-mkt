@@ -62,3 +62,20 @@ do catálogo excluído. Script: `../05-upload/shopping_008.py`.
 **Atenção**: 7 variações (bermuda + sapatilha) estão `ELIGIBLE_LIMITED`
 no Merchant — conferir a aba "Requer atenção" (provável falta de atributo
 de vestuário ou GTIN); a camiseta está `ELIGIBLE` pleno.
+
+## PMax (2026-08-10)
+
+**`[009-PMAX]-NEOPRENE`** (ID 24128612776) criada via API, **PAUSADA** —
+Performance Max feed-only (anúncios gerados do Merchant, sem assets
+obrigatórios), Maximizar valor da conversão, R$15/dia, merchant
+5507430207. Asset group `[009-A]-NEOPRENE` (ID 6739198789) com listing
+group filter nos 11 item IDs e restante do catálogo excluído. Script:
+`../05-upload/pmax_009.py`.
+
+**Regra de convivência (prioridade de veiculação)**: PMax > Shopping
+padrão para os mesmos produtos. Manter **apenas uma** ativa:
+- 009 ativa → 008 fica pausada (senão a PMax engole a Shopping);
+- preferindo controle manual/CPC barato no início, ativar a 008 e manter
+  a 009 pausada.
+Recomendação: ativar a 009 (padrão da conta é PMax na linha principal,
+ex.: poncho) e deixar a 008 como plano B de controle.
