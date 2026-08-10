@@ -112,3 +112,22 @@ filters) e o feed-only removido. Grupo atual: **[009-A]-NEOPRENE
   800×800 da conta, logo;
 - 11 produtos incluídos + resto excluído; 25 search themes migrados;
 - Brand Guidelines: nome da empresa + logo no nível da campanha.
+
+## Quebra em 4 grupos de recursos (2026-08-10)
+
+PMax 009 reestruturada a pedido do usuário:
+
+| Grupo | ID | Produtos | URL final | Temas |
+|---|---|---|---|---|
+| [009-A]-NEOPRENE-GERAL | 6739295430 | 11 (linha toda) | home | 25 genéricos |
+| [009-B]-SAPATILHA | 6739296834 | 3 | página sapatilha | 25 |
+| [009-C]-CAMISETA | 6739164542 | 4 | página camiseta | 17 |
+| [009-D]-BERMUDA | 6739235242 | 4 | página bermuda | 13 |
+
+Cada grupo: 15 títulos + 3 longos + 4 descrições da copy 007
+correspondente, listing filter no subconjunto de produtos (restante
+excluído). Racional: grupos de recursos não dividem budget (o Google
+escolhe por leilão); a quebra alinha criativo/URL/temas ao produto.
+Sobreposição A×(B/C/D) é aceita em PMax — o geral cobre buscas de linha.
+Imagens: banner + quadrada placeholder replicados nos 4 grupos — o
+usuário vai subir fotos/vídeos reais manualmente em cada grupo.
