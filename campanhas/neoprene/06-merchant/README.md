@@ -98,3 +98,17 @@ explicitamente (não herda default como a UI sugere).
   tennis/futevôlei/cachoeira), meia/bota, camiseta/camisa térmica,
   bermuda (neoprene/surf/natação), roupa de neoprene/surf/natação,
   segunda pele, conjunto.
+
+## Títulos e assets completos na PMax (2026-08-10)
+
+A API não permite completar grupo feed-only incrementalmente (mínimos
+validados por operação). Solução: grupo novo completo criado em um único
+request (ordem oficial: assets → asset group → vínculos → listing
+filters) e o feed-only removido. Grupo atual: **[009-A]-NEOPRENE
+(ID 6739295430)** com:
+- 15 títulos (base 007, nível linha), 3 títulos longos, 4 descrições;
+- banner 1200×628 gerado (placeholder tipográfico da marca — SUBSTITUIR
+  por foto real de produto quando o usuário enviar), imagem quadrada
+  800×800 da conta, logo;
+- 11 produtos incluídos + resto excluído; 25 search themes migrados;
+- Brand Guidelines: nome da empresa + logo no nível da campanha.
