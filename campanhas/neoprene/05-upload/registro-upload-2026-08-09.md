@@ -46,12 +46,29 @@ atualizado com o padrão da conta.
 Keywords: **240/240 criadas**, match conforme coluna "Match sugerido"
 (frase para head terms, exata para cauda longa), sem partial failures.
 
+## Etapa 2 — RSAs e extensões (2026-08-09, mesma data)
+
+Subidos via `etapa2_ads.py` (check → validate → execute):
+- **11 RSAs** (1 por grupo), 15 títulos + 4 descrições cada, contagens
+  validadas por script. IDs 820352081968–820352081998. Pin apenas no
+  grupo [007-K]-MARCA (título "Use Zero Hora" fixo na posição 1).
+  Status pós-criação: todos REVIEW_IN_PROGRESS (revisão de política do
+  Google), ad strength PENDING.
+- **Extensões da campanha**: 4 sitelinks (produtos + site), 8 callouts,
+  1 snippet estruturado (Tipos: Camiseta; Bermuda; Sapatilha; Meia de
+  Neoprene).
+- **URLs finais**: sapatilha → página da sapatilha (A, B, C); camiseta →
+  página da camiseta (D, H, I, J — fallback por não existir página de
+  coleção neoprene); bermuda → página da bermuda (E, F, G); marca → home.
+- Copy registrada com contagens em `../02-ads.md`; CSVs de referência em
+  `../03-csv/`.
+
 ## Pendências antes de ativar (checklist master)
 
-1. **Etapa 2**: RSAs (15 títulos/4 descrições por grupo), sitelinks,
-   callouts, snippets — a campanha não tem anúncios.
+1. Aguardar aprovação de política dos 11 RSAs (REVIEW_IN_PROGRESS) e
+   conferir ad strength quando calculado.
 2. Conferir orçamento (R$30/dia é placeholder de lançamento) e a
    conversão primária (compra) na conta.
-3. URLs finais por grupo (inclui decisão da página de destino do grupo
-   categoria/surf/natação).
-4. Revisão no Ads Editor/interface e ativação manual.
+3. Se for criada uma página de coleção neoprene no site, trocar a URL
+   final dos grupos H, I e J (hoje caem na camiseta).
+4. Revisão final na interface e ativação manual.
