@@ -79,3 +79,9 @@ padrão para os mesmos produtos. Manter **apenas uma** ativa:
   a 009 pausada.
 Recomendação: ativar a 009 (padrão da conta é PMax na linha principal,
 ex.: poncho) e deixar a 008 como plano B de controle.
+
+**Correção 2026-08-10**: a 009 nasceu sem segmentação (Locais: todos os
+países). Aplicados via API: geo Brasil (2076) + idiomas português (1014)
+e inglês (1000), espelhando a [001-PMAX]-PONCHO-FEMININO. Lição
+incorporada: PMax via API exige criar os campaign criteria de geo/idioma
+explicitamente (não herda default como a UI sugere).
