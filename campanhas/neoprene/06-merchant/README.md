@@ -85,3 +85,16 @@ países). Aplicados via API: geo Brasil (2076) + idiomas português (1014)
 e inglês (1000), espelhando a [001-PMAX]-PONCHO-FEMININO. Lição
 incorporada: PMax via API exige criar os campaign criteria de geo/idioma
 explicitamente (não herda default como a UI sugere).
+
+## Cópia de conteúdo 007 → 009 (2026-08-10)
+
+- **Sitelinks (4)** e **callouts (9 assets com os textos da campanha; um
+  texto tinha asset duplicado pré-existente na conta)** vinculados à
+  [009-PMAX]-NEOPRENE via campaign assets — mesmos assets da 007, sem
+  duplicação de conteúdo.
+- **KWs → temas de pesquisa**: PMax não usa keywords; os 25 termos-cabeça
+  da 007 entraram como search themes no asset group [009-A] (limite do
+  Google: 25/grupo) — sapatilha (aquática/neoprene/náutica/praia/beach
+  tennis/futevôlei/cachoeira), meia/bota, camiseta/camisa térmica,
+  bermuda (neoprene/surf/natação), roupa de neoprene/surf/natação,
+  segunda pele, conjunto.
