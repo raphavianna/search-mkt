@@ -41,3 +41,24 @@ Feed do Merchant **não pluga em campanha de Search de texto** (a
 da conta), inclusão da linha na PMax existente, e listagens orgânicas do
 Shopping. Criação da campanha Shopping só com pedido explícito (escopo do
 repositório).
+
+## Desfecho (2026-08-10)
+
+**Feed manual desnecessário**: a busca "neoprene" no Merchant confirmou os
+3 produtos **já sincronizados via API Content** (plataforma do e-commerce),
+aprovados e em estoque — 11 variações (camiseta P/M/G/GG, bermuda P/M/G/GG,
+sapatilha 34-37/38-41/42-44), IDs 1569492206–1569492230, cor Preto.
+Preços no Merchant em 2026-08-10: camiseta R$399,99 (de R$499,99), bermuda
+R$299,99 (de R$399,99), sapatilha R$79,99 (de R$179,90).
+O `feed-neoprene.tsv` fica arquivado como referência; NÃO subir (criaria
+fonte duplicada).
+
+**Campanha criada**: `[008-SHOPPING]-NEOPRENE` (ID 24123512324), PAUSADA —
+Shopping standard, Maximizar valor da conversão, R$15/dia, prioridade 1,
+merchant 5507430207. Ad group `[008-A]-NEOPRENE-COMPRA`
+(ID 200137485978) com listing group filtrado nos 11 item IDs e o restante
+do catálogo excluído. Script: `../05-upload/shopping_008.py`.
+
+**Atenção**: 7 variações (bermuda + sapatilha) estão `ELIGIBLE_LIMITED`
+no Merchant — conferir a aba "Requer atenção" (provável falta de atributo
+de vestuário ou GTIN); a camiseta está `ELIGIBLE` pleno.
