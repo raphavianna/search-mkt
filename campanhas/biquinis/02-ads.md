@@ -491,14 +491,27 @@ Subdivisão de grupos de produto por custom_label:
 - **Rede:** só Pesquisa (sem Display; sem parceiros de pesquisa no lançamento).
 - **Local:** Brasil. **Idioma:** Português. **Dispositivos:** todos (fashion é mobile-first).
 - **Estratégia de lance:** Maximizar conversões nas 4 campanhas. **Graduação:** ao acumular conversões suficientes por campanha/grupo, migrar para tCPA/tROAS derivado do ticket/margem (registrar gatilho na Etapa 3).
-- **Orçamento diário provisório (baixa temporada, calibrar com CPC do Semrush):**
+- **Orçamento diário — calibrado pelo forecast do Google Keyword Planner** (setembro/2026,
+  Maximize Conversions, Brasil; ver `reports/2026-08-12-leitura-forecast-keyword-planner.md`):
+  - **Âncora do Google (só Search, conjunto das 118 KWs):** CPC médio **R$ 0,15** ·
+    **R$ 21,66/dia** (≈ R$ 649,80/mês) · ~4.419 cliques · **30 conversões/mês** · CPA **R$ 22,00**.
+  - **Split entre as 3 campanhas de Search** mantendo a proporção por ticket/demanda da
+    Etapa 0 (Hot Pant > Biquíni > Marca), ancorado no total do Google (~R$ 22/dia):
+
   | Campanha | R$/dia | Racional |
   |---|---|---|
-  | Shopping | 25 | maior conversão em D2C; cobre catálogo inteiro |
-  | Search - Hot Pant | 12 | ticket alto (mediana R$141) e campeão no Site Próprio |
-  | Search - Biquínis | 8 | volume de entrada, ticket menor (R$75) |
-  | Search - Marca | 5 | defende a marca; barato e alta conversão |
-  | **Total** | **50** | provisório; escala no pacing sazonal |
-- **Pacing sazonal** (base: pico jan = 132 un, ago = vale). Escalar o orçamento: set +30%, out +60%, **nov 2x (Black Friday)**, **dez–jan 3–4x (pico verão)**, fev retorno gradual. Reduzir na baixa (mar–ago).
+  | Search - Hot Pant | 11 | ticket alto (mediana R$141) e campeão no Site Próprio |
+  | Search - Biquínis | 7 | volume de entrada, ticket menor (R$75) |
+  | Search - Marca | 4 | defende a marca; barato e alta conversão |
+  | **Subtotal Search** | **22** | âncora = R$ 21,66/dia do forecast do Google |
+  | Shopping | 25 | provisório — **não coberto** pelo forecast (só Search); lógica D2C/catálogo |
+  | **Total** | **47** | Search calibrado + Shopping provisório |
 
-> Números absolutos de orçamento são **provisórios** (sem CPC vivo nesta sessão). O **split** entre campanhas é ancorado em dado real (canal-mix e ticket da Etapa 0). Calibrar os valores quando o volume/CPC do Semrush chegar.
+- **Pacing sazonal** (base: pico jan = 132 un, ago = vale). O forecast já precifica
+  **setembro**; escalar a partir daí: out +60%, **nov 2× (Black Friday)**,
+  **dez–jan 3–4× (pico verão)**, fev retorno gradual. Reduzir na baixa (mar–ago).
+
+> **Search agora tem âncora de dado real** (forecast do Google Planner, CPC R$ 0,15 e
+> R$ 21,66/dia). O que ainda é provisório: **Shopping** (fora do forecast) e a **ordenação
+> por volume/KW** — o forecast é agregado, não traz volume por keyword. Para o split fino
+> por keyword e ordenação, rodar Semrush BR ou re-exportar o Planner em nível de keyword.

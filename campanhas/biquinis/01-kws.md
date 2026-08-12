@@ -8,6 +8,16 @@
 - **Arquivos:** `03-csv/kws-seed-biquinis.xlsx` (3 abas) · `03-csv/kws-seed-por-ag.csv` ·
   `03-csv/kws-seed-semrush-lotes.txt`.
 
+> **Atualização 2026-08-12 — CPC via Google Keyword Planner (forecast do usuário).**
+> O forecast do Planner (arquivado em `data/biquinis/2026-08-12-keyword-forecasts-google-planner.csv`;
+> leitura em `reports/2026-08-12-leitura-forecast-keyword-planner.md`) dá **CPC médio da linha
+> = R$ 0,15** e orçamento Google de **R$ 21,66/dia** para o conjunto Search — já aplicado ao
+> orçamento na Etapa 2. **Porém é agregado**: não traz volume/CPC **por keyword**, então a
+> ordenação de cada ad group "por volume decrescente" ainda depende de **Semrush BR** ou de
+> um re-export do Planner em **nível de keyword** (busca mensal média + lance de topo por termo).
+> **Links finais por ad group:** sugestões em `03-csv/links-sugeridos-por-adgroup.csv`
+> (todos *A VERIFICAR* — Nuvemshop sem credenciais e site bloqueado por egress nesta sessão).
+
 ## Como usar no Semrush
 O `phrase_these` aceita **até 100 keywords por vez, separadas por `;`**. A aba
 **"Lotes Semrush"** (e o `.txt`) já traz os 2 lotes prontos:
