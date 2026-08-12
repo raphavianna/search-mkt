@@ -37,7 +37,11 @@ do repositório (Etapa 2 de `<pipeline_de_campanha>`).
 
 ## Divergências entre o CSV e a conta — decisões tomadas
 
-### 1. URL final (alterada)
+### 1. URL final (alterada — depois refinada por subcategoria)
+
+> **Atualização 2026-08-12:** o usuário forneceu as 5 URLs reais de subcategoria e as
+> URLs finais foram remapeadas. Ver "Remapeamento de URLs e extensões" no fim do arquivo.
+> A seção abaixo registra a decisão original do upload.
 
 O CSV apontava para `usezerohora.lojavirtualnuvem.com.br` (subdomínio interno da
 Nuvemshop), em 4 caminhos: `/saida-de-praia`, `/saida-de-praia/vestido`,
@@ -74,10 +78,72 @@ para manter a numeração sequencial dos relatórios.
 CSV conferido antes do upload: **0 violações** em 75 títulos (≤30), 20 descrições (≤90)
 e 10 caminhos de exibição (≤15).
 
+---
+
+# Remapeamento de URLs e extensões — 2026-08-12
+
+O usuário confirmou que as subcategorias existem e forneceu as 5 URLs reais. Segundo
+mutate atômico de 33 operações (`validateOnly` aprovado antes de executar).
+
+## URLs finais por grupo
+
+| Grupo | URL final |
+|---|---|
+| AG0 · Saída de Praia Zero Hora | `/feminino/saida-de-praia/` |
+| AG1 · Vestido Saída de Praia | `/feminino/saida-de-praia/vestido-manga-longa/` |
+| AG2 · Transparência / Tule | `/feminino/saida-de-praia/` |
+| AG3 · Saia de Praia | `/feminino/saida-de-praia/saia/` |
+| AG4 · Categoria Genérico | `/feminino/saida-de-praia/` |
+
+Base: `https://usezerohora.com.br`.
+
+Racional do mapeamento:
+
+- **AG1 → `vestido-manga-longa`**: 2 das 5 keywords do grupo pedem comprimento
+  explicitamente (`vestido saída de praia longo`, `saída de praia manga longa`) e
+  nenhuma pede regata. `vestido-regata` fica coberta por sitelink. Se o volume
+  justificar, vale quebrar o AG1 em dois grupos (manga longa × regata) e dar a cada um
+  a sua URL — hoje `vestido de praia feminino` e `vestido saída de praia`, que são
+  genéricas, caem em manga longa.
+- **AG2 → categoria mãe**: não existe subcategoria de transparência/tule; as peças com
+  transparência estão espalhadas pelos tipos.
+- **AG0 (marca) e AG4 (genérico) → categoria mãe**: intenção ampla, a categoria cobre
+  todo o sortimento.
+
+## Extensões criadas (nível de campanha)
+
+**5 sitelinks** — texto ≤25, descrições ≤35 cada:
+
+| Texto | Descrição 1 | Descrição 2 | Destino |
+|---|---|---|---|
+| Vestido Manga Longa | Vestidos longos para a praia | Pronta entrega Zero Hora | `/vestido-manga-longa/` |
+| Vestido Regata | Vestidos regata de praia | Loja oficial Zero Hora | `/vestido-regata/` |
+| Saia de Praia | Saias em tule e transparência | A partir de R$49,99 | `/saia/` |
+| Conjunto Atoalhado | Conjuntos em tecido atoalhado | Pronta entrega Zero Hora | `/conjunto-atoalhado/` |
+| Shorts de Praia | Shorts de praia femininos | Loja oficial Zero Hora | `/shorts/` |
+
+**8 callouts** (≤25): Pronta Entrega · Loja Oficial Zero Hora · A Partir de R$49,99 ·
+Envio para Todo o Brasil · Fabricação Própria · Compra Online Segura ·
+Novos Modelos 2026 · Modelos com Transparência
+
+**1 snippet estruturado** — `Tipos`: Vestido Manga Longa, Vestido Regata, Saia de Praia,
+Conjunto Atoalhado, Shorts de Praia
+
+**Procedência da copy das extensões:** as afirmações reaproveitam claims que já estavam
+no CSV aprovado (pronta entrega, loja oficial, a partir de R$49,99, transparência) mais
+`fabricação própria` e `envio para todo o Brasil`, que vêm do contexto de marca do
+`CLAUDE.md`. Nenhuma página foi lida — o proxy da sessão bloqueia o domínio. **Preço e
+prazo mudam: reconfirmar `A Partir de R$49,99` e `Envio para Todo o Brasil` na loja
+antes de ativar.**
+
+## Status editorial dos anúncios
+
+AG0, AG2 e AG4 voltaram `APPROVED`. AG1 e AG3 voltaram a `UNKNOWN` — esperado, porque
+editar a URL final de um anúncio dispara nova análise do Google.
+
 ## Pendências antes de ativar
 
-- [ ] Confirmar a URL final — decidir entre a categoria única e URLs por subcategoria
-- [ ] Extensões não vinham no CSV e **não foram criadas**: sitelinks (4+), callouts (6+),
-      snippets estruturados. A Etapa 2 do master pede essas peças
-- [ ] Conferir a aprovação editorial dos 5 RSAs (status ainda `UNKNOWN`, análise pendente)
-- [ ] Ativar a campanha (`status: ENABLED`) quando os itens acima estiverem fechados
+- [ ] Reconfirmar na loja os claims de preço (`A partir de R$49,99`) e envio
+- [ ] Conferir aprovação editorial de AG1 e AG3 (reanálise em andamento) e dos sitelinks
+- [ ] Avaliar quebrar o AG1 em manga longa × regata
+- [ ] Ativar a campanha (`status: ENABLED`) quando o acima estiver fechado
