@@ -45,17 +45,18 @@ reforço verbal na descrição foi suavizado.
 
 ---
 
-## Pendência identificada — Sitelinks com /search/?q= e "Modelagem que levanta"
+## Tarefa 3 — Sitelinks com /search/?q= e "Modelagem que levanta" (mesma sessão)
 
-Os sitelinks criados em `sitelinks_produtos.py` contêm:
+**Script:** `corrige_sitelinks.py execute`
+Assets atualizados via AssetService:mutate (updateMask `final_urls` + `sitelink_asset.description1`).
 
-| Sitelink | URL | Descrição 1 |
-|---|---|---|
-| "Biquíni Cortininha" (BIQUINI) | `/search/?q=cortininha` | — |
-| "Empina Bumbum" (BIQUINI) | `/search/?q=empina+bumbum` | "Modelagem que levanta" |
-| "Manga 3/4 e Longa" (HOT-PANT) | `/search/?q=hot+pant+manga` | — |
+| Sitelink | Asset ID | URL antes | URL depois | desc1 antes | desc1 depois |
+|---|---|---|---|---|---|
+| "Biquíni Cortininha" (BIQUINI) | 407254495465 | `/search/?q=cortininha` | `/feminino/biquini/` | — | — |
+| "Empina Bumbum" (BIQUINI) | 407254494838 | `/search/?q=empina+bumbum` | `/feminino/biquini/` | "Modelagem que levanta" | "Modelagem que valoriza" |
+| "Manga 3/4 e Longa" (HOT-PANT) | 407254497592 | `/search/?q=hot+pant+manga` | `/feminino/biquini/hot-pant/` | — | — |
 
-**Risco duplo no sitelink "Empina Bumbum":** URL não rastreável + descrição
-com "levanta". Recomendação: recriar este sitelink com URL de categoria real
-(`/feminino/biquini/`) e descrição suavizada ("Modelagem que valoriza").
-Ação pendente de confirmação do usuário (requer remove + create do asset).
+Verificação pós-execute: URLs e desc1 confirmados via GAQL.
+
+**Estado final:** zero URLs `/search/?q=` em anúncios ou sitelinks de [011] e [012].
+Zero descrições com "levanta" em anúncios ou sitelinks.
