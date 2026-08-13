@@ -25,5 +25,10 @@ O grupo `[011-F]-FIO-DENTAL-COMPRA` contém 33 keywords em **correspondência am
 (ex.: "biquini calcinha", "biquini pequeno", "calcinha de biquini", "micro fio dental")
 adicionadas **fora deste script** — provável expansão manual no Keyword Planner da interface.
 Risco: ampla em campanha Maximize Conversions abre muito o alcance e pode gastar em termos
-frouxos. **Recomendação:** revisar essas amplas — converter as boas para Frase e podar as
-off-target (calcinha/pequeno/micro se não forem o alvo), ou apoiar em negativas.
+frouxos.
+
+**RESOLVIDO (mesmo dia) — `limpa_fio_dental.py execute`:** removidas as 33 amplas;
+recriadas em **Frase** as 23 on-theme (contêm "fio dental"); dropadas 8 off-target
+(calcinha de biquini, biquini calcinha, biquini/biquíni fio, biquini pequeno,
+biquinis cavados, biquíni/biquini fino); adicionada negativa "calcinha" no ad group.
+Estado final do Fio Dental: **30 keywords em Frase, 0 ampla, 1 negativa**.
