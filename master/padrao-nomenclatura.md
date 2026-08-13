@@ -12,9 +12,18 @@ Nomes consistentes entre campanhas facilitam relatório, automação e leitura n
 - Rede: `Search` ou `Shopping` (PMax só quando pedido).
 - Uma campanha por eixo de controle de budget/lance (linha, marca, consideração).
 
-## Ad group
-`<Linha> | <Tema/Intenção>` — pipe com espaços. Um tema por grupo, 5–20 KWs.
-Ex.: `Biquíni | Empina Bumbum`, `Hot Pant | Proteção Solar UV50`, `Marca | Use Zero Hora`.
+## Ad group (padrão REAL da conta)
+`[NNN-<LETRA>]-DESCRICAO(-COMPRA)` — **maiúsculas, sem acento, separado por hífen**,
+onde `NNN` = número da campanha e `<LETRA>` = A, B, C… na ordem dos grupos.
+Sufixo `-COMPRA` nos grupos de intenção de compra; grupos de marca/genérico podem
+omiti-lo (ex.: `-MARCA`, `-GENERICO`). Um tema por grupo, 5–20 KWs.
+Ex.: `[011-A]-EMPINA-BUMBUM-COMPRA`, `[012-B]-PROTECAO-UV50-COMPRA`,
+`[007-K]-MARCA`, `[006-C]-UV-GERAL`.
+
+> Sem acento e sem barra: "Manga 3/4" vira `MANGA-34`; "Proteção" vira `PROTECAO`.
+> Este é o padrão vigente na conta (campanhas 002–012). O formato antigo
+> "`<Tema> | <intenção>`" ou "`AGn · Nome`" está **descontinuado** — padronizar
+> qualquer grupo que ainda apareça assim.
 
 ## Listas compartilhadas
 - Negativas: `Negativas <Linha/Tema>` — ex.: `Negativas Biquíni & Hot Pant`.
