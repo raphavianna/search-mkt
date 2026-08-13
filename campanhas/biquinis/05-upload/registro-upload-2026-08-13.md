@@ -29,6 +29,23 @@
 Trocar `campaign.status` para `ENABLED` (interface ou API). Começar pela de maior
 conversão esperada (Hot Pant, ticket alto). Acompanhar por `04-medicao.md`.
 
+## Atualização 2026-08-13 (mesmo dia) — URLs reais + remoção da Marca
+- **`[013-SEARCH]-MARCA` REMOVIDA** — marca já coberta pela `[002-SEARCH]-INSTITUCIONAL`
+  existente na conta (decisão do usuário: manter só Biquíni e Hot Pant).
+- **URLs finais reais aplicadas** nos 16 ad groups de `[011]` e `[012]`
+  (script `aplicar_urls_reais.py execute`), a partir de
+  `03-csv/links-reais-por-adgroup.csv` (capturadas via índice de busca —
+  ver `reports/2026-08-13-urls-reais-via-busca.md`). Corrige os provisórios
+  `/biquini` e `/hot-pant` (inexistentes → 404): agora produto real onde há,
+  `/search/?q=<termo>` nos genéricos. Campanhas seguem **PAUSED**.
+
+**Estrutura final na conta (2 campanhas):**
+| Campanha | ID | Status |
+|---|---|---|
+| `[011-SEARCH]-BIQUINI` | 24136476223 | PAUSED |
+| `[012-SEARCH]-HOT-PANT` | 24136476898 | PAUSED |
+| ~~`[013-SEARCH]-MARCA`~~ | 24136476661 | REMOVED |
+
 ## Reproduzir / reverter
 - Reproduzir: `python3 campanhas/biquinis/05-upload/upload_biquinis.py validate|execute`.
 - Reverter (se preciso): remover as campanhas por ID via `campaign.status = REMOVED` na conta.
